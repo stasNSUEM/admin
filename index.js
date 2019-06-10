@@ -18,7 +18,7 @@ function getMessages(event) {
 
     document.getElementById('resultMessages').innerText = '<table id='resultTable'>';
 
-    var table = document.getElementById("resultTable");
+    var table = document.getElementById('resultTable');
 
     var header = table.createTHead();
     var row = header.insertRow(0);
