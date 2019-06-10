@@ -28,11 +28,11 @@ function getMessages(event) {
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
 
-    cell1.innerText = "ID пользователя";
-    cell2.innerText = "Email";
-    cell3.innerText = "Имя пользователя";
-    cell4.innerText = "Жалоба на ...";
-    cell5.innerText = "Проблема";
+    cell1.innerHTML = "ID пользователя";
+    cell2.innerHTML = "Email";
+    cell3.innerHTML = "Имя пользователя";
+    cell4.innerHTML = "Жалоба на ...";
+    cell5.innerHTML = "Проблема";
 
     var i = 0;
     var body = table.createTBody();
@@ -54,16 +54,16 @@ function getMessages(event) {
 
                 switch (childKey) {
                     case 'email':
-                        cell2.innerText = childData;
+                        cell2.innerHTML = childData;
                         break;
                     case 'username':
-                        cell3.innerText = childData;
+                        cell3.innerHTML = childData;
                         break;
                     case 'subject':
-                        cell4.innerText = childData;
+                        cell4.innerHTML = childData;
                         break;
                     case 'message':
-                        cell5.innerText = childData;
+                        cell5.innerHTML = childData;
                         break;
                     default:
                         break;
