@@ -16,7 +16,7 @@ var database = firebase.database();
 
 function getMessages(event) {
 
-    document.getElementById('resultMessages').innerHtml = '<table id="resultTable">';
+    document.getElementById('resultMessages').innerHTML = '<table id="resultTable">';
 
     var table = document.getElementById("resultTable");
 
@@ -47,7 +47,7 @@ function getMessages(event) {
             var cell4 = row.insertCell(3);
             var cell5 = row.insertCell(4);
 
-            cell1.innerText = childSnapshot.key;
+            cell1.innerHTML = childSnapshot.key;
             childSnapshot.forEach(function(childValue) {
                 var childKey = childValue.key;
                 var childData = childValue.val();
