@@ -16,7 +16,7 @@ var database = firebase.database();
 
 function getMessages(event) {
 
-    document.getElementById('resultMessages').innerText = '<table id="resultTable">';
+    document.getElementById('resultMessages').innerText = '<table id='resultTable'>';
 
     var table = document.getElementById("resultTable");
 
