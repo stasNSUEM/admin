@@ -1,4 +1,4 @@
-﻿
+
   var firebaseConfig = {
     apiKey: "AIzaSyAj8XtY-uUCt7QizTl-LEsxzx9d9U8Do9o",
     authDomain: "login-and-registration-5e266.firebaseapp.com",
@@ -16,7 +16,7 @@ var database = firebase.database();
 
 function getMessages(event) {
 
-    document.getElementById('resultMessages').innerHTML = '<table id="resultTable">';
+    document.getElementById('resultMessages').innerText = '<table id="resultTable">';
 
     var table = document.getElementById("resultTable");
 
@@ -28,11 +28,11 @@ function getMessages(event) {
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
 
-    cell1.innerHTML = "ID пользователя";
-    cell2.innerHTML = "Email";
-    cell3.innerHTML = "Имя пользователя";
-    cell4.innerHTML = "Жалоба на ...";
-    cell5.innerHTML = "Проблема";
+    cell1.innerText = "ID пользователя";
+    cell2.innerText = "Email";
+    cell3.innerText = "Имя пользователя";
+    cell4.innerText = "Жалоба на ...";
+    cell5.innerText = "Проблема";
 
     var i = 0;
     var body = table.createTBody();
@@ -47,7 +47,7 @@ function getMessages(event) {
             var cell4 = row.insertCell(3);
             var cell5 = row.insertCell(4);
 
-            cell1.innerHTML = childSnapshot.key;
+            cell1.innerText = childSnapshot.key;
             childSnapshot.forEach(function(childValue) {
                 var childKey = childValue.key;
                 var childData = childValue.val();
