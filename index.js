@@ -1,55 +1,78 @@
-h1 { text-align: center }
-
-p {margin-bottom:0px;}
-#wrapper {position:relative; margin:0px auto; width:550px; }
-#pass-window {
-background:#FFF; 
-border:10px solid #00BFFF; 
-padding:10px; z-index:1; 
-position:absolute; 
-margin:0px auto; 
-left:40%; 
-top:40%; 
-width:375px;
-
-}
-
-#mask {
-background:#00BFFF; 
-opacity:0.8; 
-position:fixed; 
-top:0; left:0; 
-width:100%; 
-height:100%; 
-z-index:0;
-}
 
 
-body {
-  background: #fff;
-  padding: 0px;
-  margin: 0px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 16px;
+  var firebaseConfig = {
+    apiKey: "AIzaSyAj8XtY-uUCt7QizTl-LEsxzx9d9U8Do9o",
+    authDomain: "login-and-registration-5e266.firebaseapp.com",
+    databaseURL: "https://login-and-registration-5e266.firebaseio.com",
+    projectId: "login-and-registration-5e266",
+    storageBucket: "login-and-registration-5e266.appspot.com",
+    messagingSenderId: "45452621858",
+    appId: "1:45452621858:web:0f73084e0d8821a8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
   
-}
+  
+var database = firebase.database();
 
-input, button {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  margin-left: auto;
-  margin-right: auto;
-}
+function getMessages(event) {
 
-.container input  {
-background: #5d8ffc;
-  color: #fff;
-  border: 1px solid #5d8ffc;
-  border-radius: 5px;
-  padding: 15px;
-  display: block;
-  width: 70%;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-}
+    document.getElementById('resultMessages').innerHTML = '<table id="resultTable">';
+
+    var table = document.getElementById("resultTable");
+
+    var header = table.createTHead();
+    var row = header.insertRow(0);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+
+    cell1.innerText = "ID пользователя";
+    cell2.innerText = "Email";
+    cell3.innerText = "Имя пользователя";
+    cell4.innerText = "Жалоба на ...";
+    cell5.innerText = "Проблема";
+
+    var i = 0;
+    var body = table.createTBody();
+
+    var usersRef = firebase.database().ref('messages/');
+    usersRef.once('value', function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+            var row = body.insertRow(i);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+
+            cell1.innerHTML = childSnapshot.key;
+            childSnapshot.forEach(function(childValue) {
+                var childKey = childValue.key;
+                var childData = childValue.val();
+
+                switch (childKey) {
+                    case 'email':
+                        cell2.innerText = childData;
+                        break;
+                    case 'username':
+                        cell3.innerText = childData;
+                        break;
+                    case 'subject':
+                        cell4.innerText = childData;
+                        break;
+                    case 'message':
+                        cell5.innerText = childData;
+                        break;
+                    default:
+                        break;
+                }
+            });
+            i = i + 1;
+        });
+    });
+
+};
