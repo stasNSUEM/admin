@@ -6,8 +6,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-</body>
-	 <script>
+<script>
 function Accept() {
 var pass = document.getElementById('pass').value;
     win  = document.getElementById('pass-window');
@@ -20,6 +19,27 @@ if (pass == '1234') { // Указываем правильный пароль
 }
 </script>
 
+</head>
+<body>
+<div id="wrapper">
+     
+	 <body>
+
+  <section id="firebase-test">
+  <div class="container">
+    <input type="submit" onclick="return getMessages(event)" value="Обновить">
+    
+    
+    <br><br>
+    <h1>Отправленные сообщения с сайта:</h2><br>
+    <div id="resultMessages"></div>
+  </div>
+</section>
+
+
+  </div>
+</body>
+	 
      <div id="pass-window">
      <p><h3 align="center">Здравствуй, Администратор! </br> Пожалуйста, введите пароль, </br>
 	 для доступа к отправленным сообщениям от пользователей: </h3></p>
@@ -29,26 +49,8 @@ if (pass == '1234') { // Указываем правильный пароль
 </div>
 <div id="mask"></div>
 </body>
-	
-	
 
-
-<body>
-<div id="wrapper">
-     
-	 <body>
-
-  <section id="firebase-test">
-  <div class="container">
-    <input type="submit" onclick="return getMessages(event)" value="Обновить"   
-    <br><br>
-    <h1>Отправленные сообщения с сайта:</h2><br>
-    <div id="resultMessages"></div>
-  </div>
-</section>
- </div>
-
-</head>
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 <script src="index.js"></script>
+
 </html>
