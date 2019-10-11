@@ -6,7 +6,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<script>
+</body>
+	 
+     <div id="pass-window">
+     <p><h3 align="center">Здравствуй, Администратор! </br> Пожалуйста, введите пароль, </br>
+	 для доступа к отправленным сообщениям от пользователей: </h3></p>
+     <p align="center"><input type="password" maxlength="25" size="40" name="submit"id="pass" /></p>
+     <p align="center"><input type="submit" value="Принять" onClick="javascript:Accept();" /></p>
+     </div>
+</div>
+<div id="mask"></div>
+</body>
+	
+	<script>
 function Accept() {
 var pass = document.getElementById('pass').value;
     win  = document.getElementById('pass-window');
@@ -38,17 +50,7 @@ if (pass == '1234') { // Указываем правильный пароль
 
 
   </div>
-</body>
-	 
-     <div id="pass-window">
-     <p><h3 align="center">Здравствуй, Администратор! </br> Пожалуйста, введите пароль, </br>
-	 для доступа к отправленным сообщениям от пользователей: </h3></p>
-     <p align="center"><input type="password" maxlength="25" size="40" name="submit"id="pass" /></p>
-     <p align="center"><input type="submit" value="Принять" onClick="javascript:Accept();" /></p>
-     </div>
-</div>
-<div id="mask"></div>
-</body>
+
 
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 <script src="index.js"></script>
