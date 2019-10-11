@@ -1,13 +1,13 @@
 h1 { text-align: center }
 
 p {margin-bottom:0px;}
-#wrapper {position:relative; margin:0px auto; width:560px; }
+#wrapper {position:relative; margin:0px auto; width:550px; }
 #pass-window {
 background:#FFF; 
 border:10px solid #00BFFF; 
-padding:100px; z-index:1; 
+padding:10px; z-index:1; 
 position:absolute; 
-margin:40px auto; 
+margin:0px auto; 
 left:40%; 
 top:40%; 
 width:375px;
