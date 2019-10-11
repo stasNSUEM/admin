@@ -1,16 +1,16 @@
 h1 { text-align: center }
 
 p {margin-bottom:0px;}
-#wrapper {position:relative; margin:0px auto; width:550px; }
+#wrapper {position:relative; margin:0px auto; width:560px; }
 #pass-window {
 background:#FFF; 
 border:10px solid #00BFFF; 
-padding:10px; z-index:1; 
+padding:100px; z-index:1; 
 position:absolute; 
-margin:100px auto; 
-left:0%; 
+margin:0px auto; 
+left:38%; 
 top:0%; 
-width:500px;
+width:375px;
 
 }
 
