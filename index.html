@@ -7,18 +7,7 @@
 </head>
 
 </body>
-	 
-     <div id="pass-window">
-     <p><h3 align="center">Здравствуй, Администратор! </br> Пожалуйста, введите пароль, </br>
-	 для доступа к отправленным сообщениям от пользователей: </h3></p>
-     <p align="center"><input type="password" maxlength="25" size="40" name="submit"id="pass" /></p>
-     <p align="center"><input type="submit" value="Принять" onClick="javascript:Accept();" /></p>
-     </div>
-</div>
-<div id="mask"></div>
-</body>
-	
-	<script>
+	 <script>
 function Accept() {
 var pass = document.getElementById('pass').value;
     win  = document.getElementById('pass-window');
@@ -30,6 +19,18 @@ if (pass == '1234') { // Указываем правильный пароль
 } else { alert('Введенный Вами пароль неверен!'); }
 }
 </script>
+
+     <div id="pass-window">
+     <p><h3 align="center">Здравствуй, Администратор! </br> Пожалуйста, введите пароль, </br>
+	 для доступа к отправленным сообщениям от пользователей: </h3></p>
+     <p align="center"><input type="password" maxlength="25" size="40" name="submit"id="pass" /></p>
+     <p align="center"><input type="submit" value="Принять" onClick="javascript:Accept();" /></p>
+     </div>
+</div>
+<div id="mask"></div>
+</body>
+	
+	
 
 </head>
 <body>
